@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Dict
 
 
-class prompt(BaseModel):
+class Prompt(BaseModel):
     prompt: str
 
 

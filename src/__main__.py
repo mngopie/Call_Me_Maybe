@@ -1,5 +1,5 @@
 import argparse
-from src.json_loader import load_function_definition, load_prompt
+from src.json_loader import load_function_definition, load_prompts
 
 
 def parse_args():
@@ -41,8 +41,9 @@ def main():
     functions = load_function_definition(args.functions_definition)
     if not functions:
         raise RuntimeError("No function definition found.")
-    prompts = load_prompt(args.load_prompt)
-    print(prompts)
+    prompts = load_prompts(args.input)
+    for p in prompts:
+        print(f"{p}\n")
     # print(functions)
 
     # print(args.input)
